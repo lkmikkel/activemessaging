@@ -42,7 +42,7 @@ module ActiveMessaging
         adapter_name = File.basename(a, ".rb")
         require 'activemessaging/adapters/' + adapter_name
       rescue RuntimeError, LoadError => e
-        logger.debug "ActiveMessaging: adapter #{adapter_name} not loaded: #{ e.message }"
+#        logger.debug "ActiveMessaging: adapter #{adapter_name} not loaded: #{ e.message }"
       end
     end
   end
@@ -118,7 +118,7 @@ ActiveMessaging.load_activemessaging
 
 # reload these on each Rails request - leveraging Dispatcher semantics for consistency
 if defined? Rails
-  ActiveMessaging.logger.info "Rails available: Adding dispatcher prepare callback."
+#  ActiveMessaging.logger.info "Rails available: Adding dispatcher prepare callback."
   ActionDispatch::Callbacks.to_prepare :activemessaging do
     ActiveMessaging.reload_activemessaging
   end
