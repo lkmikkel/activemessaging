@@ -27,7 +27,6 @@ module ActiveMessaging
 
   # DEPRECATED, so I understand, but I'm using it nicely below.
   def self.load_extensions
-=begin
     require 'logger'
     require 'activemessaging/support'
     require 'activemessaging/gateway'
@@ -46,7 +45,6 @@ module ActiveMessaging
         logger.debug "ActiveMessaging: adapter #{adapter_name} not loaded: #{ e.message }"
       end
     end
-=end
   end
 
   def self.load_config
