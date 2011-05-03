@@ -58,7 +58,7 @@ module ActiveMessaging
     end
   end
 
-  def self.load_processors(first=true)
+  def self.load_processors(first=false)
     #Load the parent processor.rb, then all child processor classes
     load APP_ROOT + '/vendor/plugins/activemessaging/lib/activemessaging/message_sender.rb' unless defined?(ActiveMessaging::MessageSender)
     load APP_ROOT + '/vendor/plugins/activemessaging/lib/activemessaging/processor.rb' unless defined?(ActiveMessaging::Processor)
